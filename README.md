@@ -9,4 +9,4 @@ now for ensuring that the database files have been initialized , use this comman
 now you can run the project by "python manage.py runserver"  
 if there is a problem , just let me know  
 link to my project : "http://a99521469.pythonanywhere.com/blog/home/" but I don't know how long the python anywhere servers are going to serve me :)  
-Thanks  
+this is written in 8/10/2021 . Thanks  
