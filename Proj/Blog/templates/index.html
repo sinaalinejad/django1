@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <style>
+        #war
+        {
+          color:red;
+        }
+      </style>
+    <title>صفحه عضویت</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+ <body>
+    <div class="form-group" style="text-align: right;">
+        <form action="{% url 'index'%}" method="POST">            
+            <label for="input">(نام و نام خانوادگی خود را به فارسی وارد کنید)نام خود را وارد کنید</label>
+            <input type="text" name="firstname" id="input" class="form-control" style="text-align: right;" placeholder="نام">
+            <label for="input1">نام خانوادگی خود را وارد کنید</label>
+            <input type="text" name="lastname" id="input1" class="form-control" style="text-align: right;" placeholder="نام خانوادگی">
+            <label for="input2">ایمیل خود را وارد کنید</label><br>
+            <p id="war">{{ email_warn }}</p>
+            <input type="email" name="email" id="input2" class="form-control" style="text-align: right;" placeholder="ایمیل">
+            <label for="input3">پسورد خود را وارد کنید</label>
+            <input type="password" name="password" id="input3" class="form-control" style="text-align: right;" placeholder="پسورد">
+            <label for="input4">پسورد خود را تکرار کنید</label><br>
+            <p id="war">{{ pass_warn }}</p>
+            <input type="password" name="password_rep" id="input4" class="form-control" style="text-align: right;" placeholder="تکرار پسورد">
+            <br><button type="submit" class="btn btn-primary">عضویت</button>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+      #sina
+      {
+        background-color: rgb(104, 95, 15);
+      }
+      #top
+      {
+          text-align: center;
+      }
+      #tab
+      {
+        text-align: center;
+      }
+    </style>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container" id="sina">
+        <div class="jumbotron" id="top">
+          <h1>سلام {{ firstname }} {{ lastname }} به صفحه خودتان خوش آمدید </h1>
+          <p>
+              اینجا می توانید لیستی از افراد که خواهان واگذاری بازیافت خود هستند را مشاهده کنید، همچنین می توانید بازیافت خود را به جدول اضافه کنید
+          </p>
+        </div>
+        <div class="form-group">
+          <form action="{% url 'main1'%}" method="POST">
+              <label for="1"></label>
+              <input type="text" name="adres" id="1" class="form-control" placeholder="آدرس">
+          
+          <label for="2"></label>
+              <input type="number" name="shomare" id="2" class="form-control" placeholder="شماره تلفن">
+          
+          <label for="3"></label>
+              <input type="number" name="teedad" id="3" class="form-control" placeholder="تعداد بازیافت">
+          
+          <label for="4"></label>
+              
+          <input type="number" name="gheimat" id="4" class="form-control" placeholder="قیمت بر حسب تومان"><br>
+      <label for="10">  نوع بازیافت را بنویسید (پلاستیک،شیشه،فلز،کاغذ) </label> 
+      <input type="text" name="noe" id="10"><br>
+      <button type="submit" class="btn btn-primary">اضافه کردن</button>
+      </form>  
+      </div>
+        <table class="table" id="tab">
+            <thead>
+                <tr>
+                    <th>شماره تلفن</th>
+                    <th>آدرس</th>
+                    <th>نوع بازیافت</th>
+                    <th>تعداد بازیافت</th>
+                    <th>قیمت</th>
+                </tr>
+            </thead>
+            {% for item in customers %}
+            <tbody>
+                <tr>
+                    <td scope="row">{{ item.tell_num }}</td>
+                    <td>{{ item.address }}</td>
+                    <td>{{ item.baz_type }}</td>
+                    <td>{{ item.baz_num }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+      </div>  
+                
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  </body>
+</html>
